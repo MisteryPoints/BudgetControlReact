@@ -44,7 +44,10 @@ h2 {
 }
 
 header {
-    background-color: var(--azul);
+    background-image: url(./img/control-de-gastos-negocio.jpg);
+    background-repeat:no-repeat;
+    background-size: cover;
+    background-position-y: center ;
 }
 
 header h1 {
