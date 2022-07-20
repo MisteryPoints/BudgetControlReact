@@ -413,3 +413,24 @@ body .modal {
     font-size: 2.4rem;
     text-align: right;
 }
+
+body{
+    scrollbar-color: #d4aa70 #e4e4e4;
+    scrollbar-width: thin;
+    overflow: overlay;
+}
+body::-webkit-scrollbar {
+width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+overflow: overlay;
+background-color: transparent;
+border-radius: 0px;
+}
+
+body::-webkit-scrollbar-thumb {
+border-radius: 100px;
+background-image: linear-gradient(180deg, #366cd0 0%, #708ad4 99%);
+box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+}
