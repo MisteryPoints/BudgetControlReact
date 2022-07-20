@@ -1,11 +1,45 @@
 import React from 'react'
+import { formatearFecha } from '../helpers'
 
-const Gasto = () => {
+import IconoAhorro from '../img/icono_ahorro.svg'  
+import IconoCasa from '../img/icono_casa.svg'  
+import IconoComida from '../img/icono_comida.svg'  
+import IconoGastos from '../img/icono_gastos.svg'  
+import IconoOcio from '../img/icono_ocio.svg'  
+import IconoSalud from '../img/icono_salud.svg'  
+import IconoSuscripciones from '../img/icono_suscripciones.svg'  
+
+const Gasto = ({gasto}) => {
+  
+  const diccionarioIconos = {
+    ahorro  : IconoAhorro,
+    comida  : IconoComida,
+    casa    : IconoCasa,
+    gastos  : IconoGastos,
+    ocio    : IconoOcio,
+    salud   : IconoSalud,
+    sucripciones : IconoSuscripciones
+  }
+  const {nombre, cantidad, categoria , id, fecha} = gasto
+
   return (
-    <div>
-        <p>Gasto</p>
-    </div>
-  )
+      <div className="gasto sombra">
+        <div className="contenido-gasto">
+          <img 
+            src={diccionarioIconos[categoria]}
+            alt="Icono Gasto" 
+          />
+          <div className="descripcion-gasto">
+            <p className="categoria">{categoria}</p>
+            <p className="nombre-gasto">{nombre}</p>
+            <p className="fecha-gasto">
+              Agregado el: {''}
+              <span>{formatearFecha(fecha)}</span></p>
+          </div>
+        </div>
+        <p className="cantidad-gasto"> RD${cantidad}</p>
+      </div>
+    )
 }
 
 export default Gasto

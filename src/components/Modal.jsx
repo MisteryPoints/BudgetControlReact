@@ -72,7 +72,7 @@ const Modal = ({setModal, animarModal, setAnimarModal, guardarGasto}) => {
                 <option value="casa">Gastos del Hogar</option>
                 <option value="gastos">Gastos Varios</option>
                 <option value="ocio">Ocio</option>
-                <option value="ahorro">Gastos en Salud</option>
+                <option value="salud">Gastos en Salud</option>
                 <option value="sucripciones">Suscripciones</option>
 
               </select>
