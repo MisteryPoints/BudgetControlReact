@@ -27,7 +27,7 @@ const diccionarioIconos = {
   sucripciones : IconoSuscripciones
 }
 
-const Gasto = ({gasto, setGastoEditar, setGastoEliminar}) => {
+const Gasto = ({gasto, setGastoEditar, eliminarGasto}) => {
   
   const {nombre, cantidad, categoria , id, fecha} = gasto
 
@@ -41,7 +41,7 @@ const Gasto = ({gasto, setGastoEditar, setGastoEliminar}) => {
 
   const trailingActions = () => (
     <TrailingActions>
-      <SwipeAction onClick={ () => console.log('Eliminar...')}>
+      <SwipeAction onClick={ () => eliminarGasto(id)} destructive={true}>
         Eliminar
       </SwipeAction>
     </TrailingActions>
@@ -53,21 +53,22 @@ const Gasto = ({gasto, setGastoEditar, setGastoEliminar}) => {
           leadingActions={leadingActions()}
           trailingActions={trailingActions()}
         >
-          <div className="gasto sombra">
+          <div className="gasto sombra" >
             <div className="contenido-gasto">
               <img 
                 src={diccionarioIconos[categoria]}
                 alt="Icono Gasto" 
+                draggable="false"
               />
               <div className="descripcion-gasto">
-                <p className="categoria">{categoria}</p>
-                <p className="nombre-gasto">{nombre}</p>
-                <p className="fecha-gasto">
+                <p className="categoria" draggable="false">{categoria}</p>
+                <p className="nombre-gasto" draggable="false">{nombre}</p>
+                <p className="fecha-gasto" draggable="false">
                   Agregado el: {''}
                   <span>{formatearFecha(fecha)}</span></p>
               </div>
             </div>
-            <p className="cantidad-gasto"> RD${cantidad}</p>
+            <p className="cantidad-gasto" draggable="false"> RD$<span>{cantidad}</span> </p>
           </div>
         </SwipeableListItem>
       </SwipeableList>
